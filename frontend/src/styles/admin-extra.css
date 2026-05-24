@@ -1,0 +1,71 @@
+/* ── PagesManager ─────────────────────────────────────────────────────────── */
+.pm-wrap { max-width: 760px; }
+.pm-header { margin-bottom: 20px; }
+.pm-subtitle { font-family: var(--font-body, sans-serif); font-size: 13px; color: var(--mid-gray, #888); margin: 4px 0 0; }
+.pm-section-break {
+  display: flex; align-items: center; gap: 12px;
+  margin: 28px 0 4px;
+}
+.pm-section-break span {
+  font-family: var(--font-body, sans-serif);
+  font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--primary, #0047AB);
+  background: rgba(0,71,171,0.07); padding: 4px 12px;
+  border-radius: 20px; white-space: nowrap;
+}
+.pm-section-break::after {
+  content: ""; flex: 1; height: 1px;
+  background: var(--light-gray, #e5e7eb);
+}
+.pm-field-hint {
+  font-size: 11px; color: var(--mid-gray, #888);
+  font-weight: 400; font-style: italic;
+}
+.pm-form .adm-field label { font-size: 13px; font-weight: 600; margin-bottom: 5px; display: block; }
+.pm-form .adm-field input,
+.pm-form .adm-field textarea {
+  width: 100%; padding: 9px 12px;
+  border: 1px solid var(--light-gray, #e5e7eb);
+  border-radius: 8px; font-size: 13px;
+  font-family: var(--font-body, sans-serif);
+  transition: border-color 0.2s;
+}
+.pm-form .adm-field input:focus,
+.pm-form .adm-field textarea:focus {
+  outline: none; border-color: var(--primary, #0047AB);
+  box-shadow: 0 0 0 3px rgba(0,71,171,0.08);
+}
+.pm-actions { display: flex; gap: 12px; justify-content: flex-end; margin-top: 24px; }
+.adm-btn-secondary {
+  background: var(--light-gray, #f3f4f6);
+  color: var(--dark-gray, #374151); border: none;
+  padding: 10px 22px; border-radius: 8px;
+  font-size: 13px; font-weight: 600; cursor: pointer;
+  transition: background 0.2s;
+}
+.adm-btn-secondary:hover { background: #e5e7eb; }
+.adm-toast-error { background: #dc2626 !important; }
+
+/* ── Contact Messages Panel ───────────────────────────────────────────────── */
+.cm-empty { text-align: center; padding: 48px 20px; color: var(--mid-gray, #888); font-size: 14px; }
+.cm-table-wrap { overflow-x: auto; }
+.cm-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.cm-table th { background: var(--off-white, #f9fafb); padding: 10px 14px; text-align: left; font-weight: 700; border-bottom: 2px solid var(--light-gray, #e5e7eb); white-space: nowrap; }
+.cm-table td { padding: 10px 14px; border-bottom: 1px solid var(--light-gray, #e5e7eb); vertical-align: top; }
+.cm-table tr:last-child td { border-bottom: none; }
+.cm-table tr:hover td { background: var(--off-white, #f9fafb); }
+.cm-topic-pill {
+  display: inline-block; font-size: 10px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.5px;
+  padding: 2px 8px; border-radius: 20px;
+  background: rgba(0,71,171,0.08); color: var(--primary, #0047AB);
+}
+.cm-msg-preview { color: var(--mid-gray, #888); max-width: 240px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.cm-date { color: var(--mid-gray, #888); font-size: 11px; white-space: nowrap; }
+
+/* ── contact page error banner ───────────────────────────────────────────── */
+.contact-error-banner {
+  background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b;
+  border-radius: 8px; padding: 12px 16px; margin-bottom: 16px;
+  font-size: 13px;
+}

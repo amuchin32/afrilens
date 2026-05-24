@@ -1,0 +1,22 @@
+﻿.main-footer {
+  background: var(--footer-bg);
+  color: #adb5bd;
+  padding: 28px 0 0;
+  width: 100%;
+  display: block !important;
+}
+.footer-brand .brand-name { font-family: var(--font-heading); font-size: 1.4rem; font-weight: 800; color: var(--white); }
+.footer-brand .brand-name span { color: #FFD700; }
+.footer-brand .motto { font-size: 0.75rem; color: #6c757d; letter-spacing: 2px; text-transform: uppercase; margin-top: 2px; }
+.footer-brand p { font-size: 0.82rem; line-height: 1.6; margin-top: 8px; max-width: 260px; }
+.footer-heading { color: var(--white); font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 12px; padding-bottom: 6px; border-bottom: 2px solid var(--primary); display: inline-block; }
+.footer-links { list-style: none; padding: 0; }
+.footer-links li { margin-bottom: 6px; }
+.footer-links a { color: #adb5bd; font-size: 0.82rem; transition: var(--transition); display: flex; align-items: center; gap: 6px; }
+.footer-links a:hover { color: var(--white); padding-left: 4px; }
+.footer-links a::before { content: '›'; color: var(--primary); font-weight: bold; }
+.footer-social a { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: #1a1a2e; color: #adb5bd; font-size: 0.85rem; margin-right: 6px; transition: var(--transition); border: 1px solid #2a2a3e; }
+.footer-social a:hover { background: var(--primary); color: var(--white); transform: translateY(-2px); }
+.footer-bottom { background: #080c10; padding: 10px 0; margin-top: 24px; font-size: 0.75rem; color: #6c757d; }
+.footer-bottom a { color: #6c757d; }
+.footer-bottom a:hover { color: var(--white); }

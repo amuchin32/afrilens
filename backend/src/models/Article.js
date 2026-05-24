@@ -15,8 +15,11 @@ const ArticleSchema = new mongoose.Schema({
   views: { type: Number, default: 0 },
   readTime: { type: Number, default: 0 },
   publishedAt: { type: Date },
+  videoUrl: { type: String, default: "" },
+  vidType: { type: String, default: "" },
 }, { timestamps: true });
 
 ArticleSchema.index({ title: 'text', content: 'text', tags: 'text' });
 
 module.exports = mongoose.model('Article', ArticleSchema);
+

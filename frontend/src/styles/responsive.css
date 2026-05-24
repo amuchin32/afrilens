@@ -1,0 +1,9 @@
+@media (max-width: 1200px) { .container { max-width: 960px; } }
+@media (max-width: 992px) { .container { max-width: 720px; } .section-title { font-size: 1.5rem; } }
+@media (max-width: 768px) {
+  .container { max-width: 100%; padding: 0 16px; }
+  .section-title { font-size: 1.3rem; }
+  .main-content { padding: 20px 0; }
+  .hide-mobile { display: none !important; }
+}
+@media (max-width: 576px) { .section-title { font-size: 1.2rem; } }
