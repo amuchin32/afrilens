@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+ï»¿import React, { useState, useEffect, useRef } from "react";
 import { createArticle, updateArticle } from "../services/articleService";
 import { uploadImage } from "../services/uploadService";
 import { FaUpload, FaTimes, FaEye, FaEdit, FaBold, FaItalic, FaListUl, FaListOl, FaLink, FaHeading } from "react-icons/fa";
@@ -111,7 +111,7 @@ export default function ArticleEditor({ article, categories, onDone }) {
           <h2 className="adm-section-title" style={{ marginBottom: 2 }}>
             {article ? "Edit Article" : "New Article"}
           </h2>
-          <span className="ae-meta-info">{wordCount} words · ~{readTime} min read</span>
+          <span className="ae-meta-info">{wordCount} words Â· ~{readTime} min read</span>
         </div>
         <div className="ae-header-actions">
           <button type="button" className={`adm-btn adm-btn-secondary${preview ? " active" : ""}`}
@@ -263,7 +263,7 @@ export default function ArticleEditor({ article, categories, onDone }) {
                   <div className="ae-img-placeholder">
                     <FaUpload size={28} />
                     <p>Click to upload cover image</p>
-                    <small>JPG, PNG, WebP — max 5MB</small>
+                    <small>JPG, PNG, WebP â€” max 5MB</small>
                   </div>
                 )}
                 {uploading && <div className="ae-img-uploading">Uploading...</div>}
@@ -337,7 +337,7 @@ export default function ArticleEditor({ article, categories, onDone }) {
               <div className="ae-seo-preview">
                 <div className="ae-seo-preview-label">Google Preview</div>
                 <div className="ae-seo-preview-box">
-                  <div className="ae-seo-preview-url">afrilens.com › {form.category?.toLowerCase()} › {form.title.toLowerCase().replace(/\s+/g, "-").slice(0, 40)}</div>
+                  <div className="ae-seo-preview-url">afrilens.com â€º {form.category?.toLowerCase()} â€º {form.title.toLowerCase().replace(/\s+/g, "-").slice(0, 40)}</div>
                   <div className="ae-seo-preview-title">{form.title || "Article Title"}</div>
                   <div className="ae-seo-preview-desc">{form.summary || "Article summary will appear here..."}</div>
                 </div>
@@ -377,6 +377,7 @@ function ArticlePreview({ form, imgPrev }) {
     </div>
   );
 }
+
 
 
 

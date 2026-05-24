@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { getBreakingNews } from '../../services/articleService';
 
 const DEFAULT_HEADLINES = [
-  { _id: '1', title: 'Welcome to AfriLENS.com � Africa Through a New Lens', slug: '#' },
+  { _id: '1', title: 'Welcome to AfriLENS.com — Africa Through a New Lens', slug: '#' },
   { _id: '2', title: 'Stay informed with the latest news from across Africa and the world', slug: '#' },
   { _id: '3', title: 'AfriLENS: Your trusted source for news from Liberia and beyond', slug: '#' },
 ];
@@ -36,3 +36,4 @@ const BreakingNewsTicker = () => {
 };
 
 export default BreakingNewsTicker;
+
