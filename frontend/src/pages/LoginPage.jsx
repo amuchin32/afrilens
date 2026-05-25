@@ -17,7 +17,7 @@ const LoginPage = () => {
     try {
       const res = await login(form);
       loginUser(res.data.token, res.data.user);
-      navigate('/admin');
+      window.location.href = '/admin';
     } catch (err) {
       setError(err.response?.data?.message || 'Login failed');
     } finally {
@@ -50,3 +50,4 @@ const LoginPage = () => {
 };
 
 export default LoginPage;
+
