@@ -14,12 +14,25 @@ const LoginPage = () => {
     e.preventDefault();
     setLoading(true);
     setError('');
+
+    const timeout = new Promise((_, reject) =>
+      setTimeout(() => reject(new Error('Request timed out. Please check your connection and try again.')), 15000)
+    );
+
     try {
-      const res = await login(form);
+      const res = await Promise.race([login(form), timeout]);
       loginUser(res.data.token, res.data.user);
-      window.location.href = '/admin';
+      navigate('/admin');
     } catch (err) {
-      setError(err.response?.data?.message || 'Login failed');
+      if (err.message === 'Network Error' || err.code === 'ERR_NETWORK') {
+        setError('Cannot reach server. Please check your internet connection.');
+      } else if (err.message.includes('timed out')) {
+        setError('Login timed out. Please try again.');
+      } else if (err.response?.status === 429) {
+        setError('Too many attempts. Please wait 15 minutes and try again.');
+      } else {
+        setError(err.response?.data?.message || 'Login failed. Please try again.');
+      }
     } finally {
       setLoading(false);
     }
@@ -50,4 +63,3 @@ const LoginPage = () => {
 };
 
 export default LoginPage;
-

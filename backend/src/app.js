@@ -5,9 +5,13 @@ const morgan = require('morgan');
 const compression = require('compression');
 const cookieParser = require('cookie-parser');
 const rateLimit = require('express-rate-limit');
+const path = require('path');
 
 const app = express();
-const path = require('path');
+
+// Trust Railway/Netlify reverse proxy - CRITICAL for correct IP detection
+app.set('trust proxy', 1);
+
 app.use('/uploads', express.static(path.join(__dirname, '..', 'uploads')));
 
 app.use(helmet());
@@ -36,11 +40,22 @@ app.use(cors({
 
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
-  max: 100,
-  message: 'Too many requests from this IP, please try again later.',
+  max: 500,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { success: false, message: 'Too many requests from this IP, please try again later.' },
 });
 app.use('/api/', limiter);
 
+const authLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 20,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { success: false, message: 'Too many login attempts, please try again later.' },
+});
+
+app.use('/api/auth', authLimiter);
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/articles', require('./routes/articles'));
 app.use('/api/categories', require('./routes/categories'));
@@ -64,15 +79,3 @@ app.use((req, res) => {
 app.use(require('./middleware/errorHandler'));
 
 module.exports = app;
-
-
-
-
-
-
-
-
-
-
-
-
