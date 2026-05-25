@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import { Link } from "react-router-dom";
 import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube, FaWhatsapp, FaMapMarkerAlt, FaEnvelope, FaPhone } from "react-icons/fa";
 import API from "../../services/api";
@@ -33,7 +33,6 @@ const Footer = () => {
       <div className="container">
         <div className="row g-5">
 
-          {/* Brand Column */}
           <div className="col-lg-4 col-md-6">
             <div className="footer-brand">
               <div className="brand-name">Afri<span>LENS</span></div>
@@ -49,7 +48,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Sections Column */}
           <div className="col-lg-2 col-md-6">
             <h6 className="footer-heading">Sections</h6>
             <ul className="footer-links">
@@ -59,7 +57,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Company Column */}
           <div className="col-lg-2 col-md-6">
             <h6 className="footer-heading">Company</h6>
             <ul className="footer-links">
@@ -76,7 +73,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact Column */}
           <div className="col-lg-4 col-md-6">
             <h6 className="footer-heading">Contact Us</h6>
             <ul className="footer-links">
@@ -85,13 +81,13 @@ const Footer = () => {
                 {foot.address}
               </li>
               <li>
-                <a href={`mailto:${foot.email}`}>
+                <a href={"mailto:" + foot.email}>
                   <FaEnvelope style={{ color: "var(--primary)", marginRight: 8 }} />
                   {foot.email}
                 </a>
               </li>
               <li>
-                <a href={`tel:${foot.phone}`}>
+                <a href={"tel:" + foot.phone}>
                   <FaPhone style={{ color: "var(--primary)", marginRight: 8 }} />
                   {foot.phone}
                 </a>
@@ -106,10 +102,9 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Footer Bottom */}
       <div className="footer-bottom mt-5">
         <div className="container d-flex flex-wrap justify-content-between align-items-center gap-2">
-          <span>� {new Date().getFullYear()} {foot.copyright}</span>
+          <span>© {new Date().getFullYear()} {foot.copyright}</span>
           <span>Designed &amp; Built By <strong style={{ color: "white" }}>AlgiveSolution</strong></span>
         </div>
       </div>

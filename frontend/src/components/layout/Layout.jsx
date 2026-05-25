@@ -1,8 +1,9 @@
-import React from 'react';
-import TopBar from './TopBar';
-import Navbar from './Navbar';
-import Footer from './Footer';
-import BreakingNewsTicker from '../common/BreakingNewsTicker';
+﻿import React from "react";
+import TopBar from "./TopBar";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
+import BreakingNewsTicker from "../common/BreakingNewsTicker";
+
 const Layout = ({ children }) => (
   <div className="page-wrapper" style={{ display:"flex", flexDirection:"column", minHeight:"100vh" }}>
     <TopBar />
@@ -14,4 +15,5 @@ const Layout = ({ children }) => (
     <Footer />
   </div>
 );
+
 export default Layout;
