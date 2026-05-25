@@ -17,7 +17,7 @@ app.use(cookieParser());
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
-app.use(cors({ origin: ['http://localhost:5173', 'https://afrilens-pi.vercel.app', 'https://afrilens.vercel.app', 'https://afrilens.netlify.app'], credentials: true }));
+app.use(cors({ origin: ['http://localhost:5173', 'https://afrilens.netlify.app', 'https://afrilens-pi.vercel.app'], credentials: true }));
 
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
@@ -49,6 +49,7 @@ app.use((req, res) => {
 app.use(require('./middleware/errorHandler'));
 
 module.exports = app;
+
 
 
 
