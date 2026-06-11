@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+﻿import React, { useState } from "react";
 import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import ArticlesManager from "./ArticlesManager";
@@ -6,6 +6,7 @@ import ArticleEditor from "./ArticleEditor";
 import VideosManager from "./VideosManager";
 import PagesManager from "./PagesManager";
 import MediaManager from "./MediaManager";
+import ChangePasswordPage from "../pages/ChangePasswordPage";
 import ContactMessages from "./ContactMessages";
 import SocialLinksManager from "./SocialLinksManager";
 import { FaNewspaper, FaVideo, FaImages, FaFileAlt, FaSignOutAlt, FaPlus, FaBars, FaTimes, FaTachometerAlt, FaEnvelope, FaShareAlt } from "react-icons/fa";
@@ -69,6 +70,7 @@ export default function Dashboard() {
           {active === "media"     && <MediaManager />}
           {active === "pages"     && <PagesManager />}
           {active === "messages"  && <ContactMessages />}
+          {active === "security"  && <ChangePasswordPage />}
           {active === "social"    && <SocialLinksManager />}
         </div>
       </div>
@@ -121,3 +123,4 @@ function Overview({ onGo, refreshKey }) {
     </div>
   );
 }
+

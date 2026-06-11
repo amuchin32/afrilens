@@ -14,6 +14,8 @@ import ContactPage from "./pages/ContactPage";
 import ArticlePage from "./pages/ArticlePage";
 import LoginPage from "./pages/LoginPage";
 import AdminPage from "./pages/AdminPage";
+import ForgotPasswordPage from "./pages/ForgotPasswordPage";
+import ResetPasswordPage from "./pages/ResetPasswordPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import "./styles/main.css";
 import "./styles/navbar.css";
@@ -49,14 +51,15 @@ function App() {
             <Route path="/culture/:slug"       element={<ArticlePage />} />
             <Route path="/sports/:slug"        element={<ArticlePage />} />
 
-            <Route path="/login" element={<LoginPage />} />
-            <Route path="/admin" element={<AdminPage />} />
-            <Route path="*"      element={<NotFoundPage />} />
+            <Route path="/login"                    element={<LoginPage />} />
+            <Route path="/forgot-password"          element={<ForgotPasswordPage />} />
+            <Route path="/reset-password/:token"    element={<ResetPasswordPage />} />
+            <Route path="/admin"                    element={<AdminPage />} />
+            <Route path="*"                         element={<NotFoundPage />} />
           </Routes>
         </Layout>
       </Router>
     </AuthProvider>
   );
 }
-
 export default App;
