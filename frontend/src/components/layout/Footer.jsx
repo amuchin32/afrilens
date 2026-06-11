@@ -5,14 +5,14 @@ import API from "../../services/api";
 
 const Footer = () => {
   const [social, setSocial] = React.useState({});
-  const [foot,   setFoot]   = React.useState({
+  const [foot, setFoot] = React.useState({
     brandTagline: "Africa Through a New Lens",
-    brandDesc:    "Delivering authentic, impactful journalism from Liberia and across the African continent. Trusted by readers worldwide.",
-    address:      "Logan Town, Monrovia, Liberia",
-    email:        "editorial@afrilens.com",
-    phone:        "+231 xxx xxx xxx",
-    editorName:   "Lyndon J. Ponnie, Sr.",
-    copyright:    "AfriLENS.com. All rights reserved.",
+    brandDesc: "Delivering authentic, impactful journalism from Liberia and across the African continent. Trusted by readers worldwide.",
+    address: "Logan Town, Monrovia, Liberia",
+    email: "editorial@afrilens.com",
+    phone: "+231 xxx xxx xxx",
+    editorName: "Lyndon J. Ponnie, Sr.",
+    copyright: "AfriLENS.com. All rights reserved.",
   });
 
   React.useEffect(() => {
@@ -33,7 +33,7 @@ const Footer = () => {
       <div className="container">
         <div className="row g-5">
 
-          <div className="col-lg-4 col-md-6">
+          <div className="col-lg-4 col-md-6 col-12">
             <div className="footer-brand">
               <div className="brand-name">Afri<span>LENS</span></div>
               <div className="motto">{foot.brandTagline}</div>
@@ -48,50 +48,35 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="col-lg-2 col-md-6">
+          <div className="col-lg-2 col-md-6 col-6">
             <h6 className="footer-heading">Sections</h6>
             <ul className="footer-links">
-              {["News","Business","Tech","Culture","Videos","Opportunities"].map(item => (
-                <li key={item}><Link to={"/" + item.toLowerCase()}>{item}</Link></li>
-              ))}
+              <li><Link to="/news">News</Link></li>
+              <li><Link to="/business">Business</Link></li>
+              <li><Link to="/around-africa">Around Africa</Link></li>
+              <li><Link to="/culture">Culture</Link></li>
+              <li><Link to="/sports">Sports</Link></li>
+              <li><Link to="/videos">Videos</Link></li>
             </ul>
           </div>
 
-          <div className="col-lg-2 col-md-6">
+          <div className="col-lg-2 col-md-6 col-6">
             <h6 className="footer-heading">Company</h6>
             <ul className="footer-links">
-              {[
-                { n: "About Us",         p: "/about" },
-                { n: "Contact",          p: "/contact" },
-                { n: "Advertise",        p: "/contact" },
-                { n: "Careers",          p: "/opportunities" },
-                { n: "Editorial Policy", p: "/about" },
-                { n: "Privacy Policy",   p: "/about" },
-              ].map(item => (
-                <li key={item.n}><Link to={item.p}>{item.n}</Link></li>
-              ))}
+              <li><Link to="/about">About Us</Link></li>
+              <li><Link to="/contact">Contact</Link></li>
+              <li><Link to="/contact">Advertise</Link></li>
+              <li><Link to="/about">Editorial Policy</Link></li>
+              <li><Link to="/about">Privacy Policy</Link></li>
             </ul>
           </div>
 
-          <div className="col-lg-4 col-md-6">
+          <div className="col-lg-4 col-md-6 col-12">
             <h6 className="footer-heading">Contact Us</h6>
             <ul className="footer-links">
-              <li>
-                <FaMapMarkerAlt style={{ color: "var(--primary)", marginRight: 8 }} />
-                {foot.address}
-              </li>
-              <li>
-                <a href={"mailto:" + foot.email}>
-                  <FaEnvelope style={{ color: "var(--primary)", marginRight: 8 }} />
-                  {foot.email}
-                </a>
-              </li>
-              <li>
-                <a href={"tel:" + foot.phone}>
-                  <FaPhone style={{ color: "var(--primary)", marginRight: 8 }} />
-                  {foot.phone}
-                </a>
-              </li>
+              <li><FaMapMarkerAlt style={{ color: "var(--primary)", marginRight: 8 }} />{foot.address}</li>
+              <li><a href={"mailto:" + foot.email}><FaEnvelope style={{ color: "var(--primary)", marginRight: 8 }} />{foot.email}</a></li>
+              <li><a href={"tel:" + foot.phone}><FaPhone style={{ color: "var(--primary)", marginRight: 8 }} />{foot.phone}</a></li>
             </ul>
             <div className="mt-4">
               <small style={{ color: "#6c757d" }}>Editor-in-Chief</small>
@@ -101,7 +86,6 @@ const Footer = () => {
 
         </div>
       </div>
-
       <div className="footer-bottom mt-5">
         <div className="container d-flex flex-wrap justify-content-between align-items-center gap-2">
           <span>© {new Date().getFullYear()} {foot.copyright}</span>

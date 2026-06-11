@@ -1,9 +1,217 @@
-@media (max-width: 1200px) { .container { max-width: 960px; } }
-@media (max-width: 992px) { .container { max-width: 720px; } .section-title { font-size: 1.5rem; } }
+﻿/* =============================================
+   AfriLENS — Full Responsive CSS
+   ============================================= */
+
+/* ── Large desktops ── */
+@media (max-width: 1200px) {
+  .container { max-width: 960px; }
+}
+
+/* ── Tablets landscape ── */
+@media (max-width: 992px) {
+  .container { max-width: 720px; }
+  .section-title { font-size: 1.5rem; }
+
+  /* Navbar */
+  .main-navbar .navbar-collapse {
+    background: var(--navbar-bg);
+    padding: 12px 16px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+  .main-navbar .nav-link {
+    padding: 10px 16px !important;
+    border-bottom: none;
+    border-left: 3px solid transparent;
+  }
+  .main-navbar .nav-link:hover,
+  .main-navbar .nav-link.active {
+    border-left-color: #FFD700;
+    border-bottom: none;
+  }
+  .search-btn-nav { margin: 8px 0; }
+
+  /* Hero */
+  .hero-article { min-height: 300px; }
+  .hero-title { font-size: 1.4rem; }
+
+  /* Category page */
+  .cp-banner-inner { flex-direction: column; gap: 16px; }
+  .cp-search-form { width: 100%; }
+  .cp-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* About */
+  .about-hero-inner { padding: 40px 0 20px; }
+  .about-mission { flex-direction: column; }
+  .about-stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .about-team-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Contact */
+  .contact-body .row { flex-direction: column; }
+
+  /* Article editor */
+  .ae-header { flex-direction: column; gap: 12px; align-items: flex-start; }
+  .ae-meta-row { flex-wrap: wrap; gap: 10px; }
+}
+
+/* ── Tablets portrait / large phones ── */
 @media (max-width: 768px) {
   .container { max-width: 100%; padding: 0 16px; }
   .section-title { font-size: 1.3rem; }
   .main-content { padding: 20px 0; }
   .hide-mobile { display: none !important; }
+
+  /* Navbar */
+  .navbar-brand-custom .brand-name { font-size: 1.5rem; }
+  .navbar-brand-custom .brand-motto { font-size: 0.6rem; }
+
+  /* Hero section */
+  .hero-article { min-height: 260px; border-radius: 8px; }
+  .hero-content { padding: 16px; }
+  .hero-title { font-size: 1.2rem; line-height: 1.3; }
+  .hero-content p { font-size: 0.82rem; }
+
+  /* Article cards */
+  .article-card .card-img-wrapper { height: 180px; }
+  .cp-hero-card-title { font-size: 1.2rem; }
+  .cp-grid { grid-template-columns: 1fr; }
+  .cp-hero-card { flex-direction: column; }
+  .cp-hero-card-img-wrap { height: 220px; }
+
+  /* Category banner */
+  .cp-banner { padding: 32px 0; }
+  .cp-banner-title { font-size: 1.6rem; }
+  .cp-banner-desc { font-size: 0.85rem; }
+  .cp-banner-inner { flex-direction: column; gap: 16px; }
+  .cp-search-form { width: 100%; }
+  .cp-search-inner { flex-wrap: wrap; gap: 8px; }
+  .cp-search-input { width: 100%; }
+
+  /* Filter bar */
+  .cp-filter-inner { flex-direction: column; gap: 8px; align-items: flex-start; }
+  .cp-filter-tabs { flex-wrap: wrap; gap: 6px; }
+
+  /* Sidebar — stack below main on mobile */
+  .cp-sidebar { margin-top: 32px; }
+  .cp-newsletter-widget { padding: 20px; }
+
+  /* About page */
+  .about-hero { padding: 40px 0 24px; }
+  .about-hero-title { font-size: 1.8rem; }
+  .about-hero-lead { font-size: 0.9rem; }
+  .about-hero-ctas { flex-direction: column; gap: 10px; }
+  .about-btn-primary,
+  .about-btn-secondary { width: 100%; text-align: center; padding: 12px; }
+  .about-stats-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .about-mission { flex-direction: column; gap: 24px; }
+  .about-values-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .about-team-grid { grid-template-columns: 1fr; gap: 16px; }
+  .about-team-card { flex-direction: row; gap: 16px; align-items: flex-start; }
+  .about-cta-band { padding: 40px 20px; }
+  .about-cta-title { font-size: 1.4rem; }
+  .about-cta-form { flex-direction: column; gap: 10px; }
+  .about-cta-input { width: 100%; }
+  .about-cta-btn { width: 100%; }
+
+  /* Contact page */
+  .contact-banner { padding: 40px 0 24px; }
+  .cp-banner-title { font-size: 1.6rem; }
+  .contact-form-card { padding: 20px; }
+  .contact-info { margin-top: 24px; }
+  .contact-social-links { gap: 10px; }
+  .contact-submit-btn { width: 100%; justify-content: center; }
+
+  /* Article page */
+  .article-hero { min-height: 280px; }
+  .article-hero h1 { font-size: 1.4rem; }
+  .article-body { font-size: 1rem; }
+
+  /* Admin */
+  .adm-shell { flex-direction: column; }
+  .adm-sidebar { position: fixed; left: -280px; width: 260px; height: 100vh; z-index: 1100; transition: left 0.3s ease; }
+  .adm-sidebar.open { left: 0; }
+  .adm-main { width: 100%; }
+  .adm-stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .adm-table-wrap { overflow-x: auto; }
+  .adm-table { min-width: 700px; }
+  .ae-tabs { flex-wrap: wrap; }
+  .ae-tab { font-size: 0.8rem; padding: 8px 12px; }
+  .am-cat-tabs { overflow-x: auto; flex-wrap: nowrap; -webkit-overflow-scrolling: touch; }
+  .am-cat-tab { white-space: nowrap; }
+
+  /* Footer */
+  .main-footer { padding: 40px 0 0; }
+  .footer-brand .brand-name { font-size: 1.8rem; }
+  .footer-bottom { padding: 16px 0; font-size: 0.8rem; text-align: center; }
+  .footer-bottom .container { justify-content: center; flex-direction: column; gap: 4px; }
+
+  /* Opportunities page */
+  .opp-banner { padding: 32px 0; }
+  .opp-banner-content { flex-direction: column; gap: 12px; }
+  .opp-grid { grid-template-columns: 1fr; }
+  .opp-featured { min-height: 260px; }
+  .opp-featured-title { font-size: 1.2rem; }
+  .opp-search-form { flex-wrap: wrap; gap: 8px; }
+  .opp-search-input { width: 100%; }
+  .opp-filter-pills { flex-wrap: wrap; gap: 6px; }
 }
-@media (max-width: 576px) { .section-title { font-size: 1.2rem; } }
+
+/* ── Small phones ── */
+@media (max-width: 576px) {
+  .section-title { font-size: 1.1rem; }
+
+  /* Navbar */
+  .navbar-brand-custom .brand-name { font-size: 1.3rem; }
+
+  /* Hero */
+  .hero-title { font-size: 1.05rem; }
+  .hero-article { min-height: 220px; border-radius: 6px; }
+
+  /* Cards */
+  .cp-grid { grid-template-columns: 1fr; gap: 16px; }
+  .article-card .card-img-wrapper { height: 160px; }
+
+  /* About */
+  .about-stats-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .about-stat-value { font-size: 1.6rem; }
+  .about-values-grid { grid-template-columns: 1fr; }
+  .about-team-card { flex-direction: column; align-items: center; text-align: center; }
+  .about-team-links { justify-content: center; }
+  .about-section-title { font-size: 1.3rem; }
+  .about-mission-card { padding: 20px; }
+  .about-mission-quote { font-size: 1rem; }
+
+  /* Contact */
+  .contact-info-card { padding: 16px; }
+  .contact-form-card { padding: 16px; }
+  .contact-tip-box { padding: 16px; }
+  .contact-social-links { justify-content: center; }
+
+  /* Article page */
+  .article-hero h1 { font-size: 1.2rem; }
+
+  /* Admin */
+  .adm-stats-grid { grid-template-columns: 1fr; }
+  .adm-qa-grid { grid-template-columns: repeat(2, 1fr); }
+  .ae-header-actions { flex-wrap: wrap; gap: 6px; }
+  .ae-header-actions .adm-btn { font-size: 0.78rem; padding: 6px 10px; }
+  .adm-toolbar { flex-wrap: wrap; gap: 8px; }
+  .adm-search-wrap { width: 100%; }
+  .adm-search { width: 100%; }
+
+  /* Footer */
+  .footer-social a { width: 34px; height: 34px; font-size: 0.85rem; }
+  .col-6.footer-col { width: 50%; }
+
+  /* Videos page */
+  .videos-grid { grid-template-columns: 1fr; }
+}
+
+/* ── Very small phones (320px) ── */
+@media (max-width: 380px) {
+  .container { padding: 0 12px; }
+  .navbar-brand-custom .brand-name { font-size: 1.2rem; }
+  .about-stats-grid { grid-template-columns: 1fr 1fr; }
+  .cp-banner-title { font-size: 1.3rem; }
+  .hero-title { font-size: 1rem; }
+  .adm-qa-grid { grid-template-columns: 1fr; }
+}
