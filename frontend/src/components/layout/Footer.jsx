@@ -35,8 +35,7 @@ const Footer = () => {
 
           <div className="col-lg-4 col-md-6 col-12">
             <div className="footer-brand">
-              <div className="brand-name">Afri<span>LENS</span></div>
-              <div className="motto">{foot.brandTagline}</div>
+              <img src="/afrilens-logo.png" alt="AfriLENS" className="footer-logo" /><div className="motto">{foot.brandTagline}</div>
               <p className="mt-3">{foot.brandDesc}</p>
               <div className="footer-social mt-4">
                 {social.facebook  && <a href={social.facebook}  target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>}
@@ -97,3 +96,4 @@ const Footer = () => {
 };
 
 export default Footer;
+

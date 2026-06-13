@@ -1,6 +1,7 @@
-@import './variables.css';
+﻿@import './variables.css';
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { overflow-x: hidden; width: 100%; max-width: 100%; }
 
 body {
   font-family: var(--font-body);
@@ -136,3 +137,4 @@ img { max-width: 100%; height: auto; display: block; }
 .about-location { margin-top:16px; }
 .about-location strong { display:block; font-size:.8rem; text-transform:uppercase; letter-spacing:.4px; color:#64748b; margin-bottom:4px; }
 .about-location p { color:#334155; font-size:.9rem; margin:0; }
+

@@ -1,217 +1,221 @@
 ﻿/* =============================================
-   AfriLENS — Full Responsive CSS
+   AfriLENS — Responsive CSS (Mobile-First Fix)
    ============================================= */
 
+/* ── Global mobile safety ── */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { overflow-x: hidden !important; width: 100% !important; }
+img, video, iframe { max-width: 100%; }
+.container { width: 100%; padding-left: 16px; padding-right: 16px; margin-left: auto; margin-right: auto; }
+
 /* ── Large desktops ── */
-@media (max-width: 1200px) {
+@media (min-width: 1200px) {
+  .container { max-width: 1200px; }
+}
+
+/* ── Desktop ── */
+@media (max-width: 1199px) {
   .container { max-width: 960px; }
 }
 
 /* ── Tablets landscape ── */
 @media (max-width: 992px) {
-  .container { max-width: 720px; }
+  .container { max-width: 100%; padding: 0 20px; }
   .section-title { font-size: 1.5rem; }
-
-  /* Navbar */
-  .main-navbar .navbar-collapse {
-    background: var(--navbar-bg);
-    padding: 12px 16px;
-    border-top: 1px solid rgba(255,255,255,0.1);
-  }
-  .main-navbar .nav-link {
-    padding: 10px 16px !important;
-    border-bottom: none;
-    border-left: 3px solid transparent;
-  }
-  .main-navbar .nav-link:hover,
-  .main-navbar .nav-link.active {
-    border-left-color: #FFD700;
-    border-bottom: none;
-  }
-  .search-btn-nav { margin: 8px 0; }
-
-  /* Hero */
+  .main-navbar .navbar-collapse { background: var(--navbar-bg); padding: 12px 16px; border-top: 1px solid rgba(255,255,255,0.1); }
+  .main-navbar .nav-link { padding: 10px 16px !important; border-left: 3px solid transparent; }
+  .main-navbar .nav-link:hover, .main-navbar .nav-link.active { border-left-color: #FFD700; }
   .hero-article { min-height: 300px; }
   .hero-title { font-size: 1.4rem; }
-
-  /* Category page */
   .cp-banner-inner { flex-direction: column; gap: 16px; }
   .cp-search-form { width: 100%; }
   .cp-grid { grid-template-columns: repeat(2, 1fr); }
-
-  /* About */
-  .about-hero-inner { padding: 40px 0 20px; }
   .about-mission { flex-direction: column; }
   .about-stats-grid { grid-template-columns: repeat(2, 1fr); }
   .about-team-grid { grid-template-columns: repeat(2, 1fr); }
-
-  /* Contact */
-  .contact-body .row { flex-direction: column; }
-
-  /* Article editor */
-  .ae-header { flex-direction: column; gap: 12px; align-items: flex-start; }
-  .ae-meta-row { flex-wrap: wrap; gap: 10px; }
+  .ae-header { flex-direction: column; gap: 12px; }
+  .ae-meta-row { flex-wrap: wrap; }
 }
 
-/* ── Tablets portrait / large phones ── */
+/* ── Tablets portrait & large phones ── */
 @media (max-width: 768px) {
-  .container { max-width: 100%; padding: 0 16px; }
+  html, body { overflow-x: hidden !important; }
+  .container { max-width: 100% !important; padding: 0 15px !important; }
+  .row { margin-left: 0 !important; margin-right: 0 !important; }
+  .row > * { padding-left: 0 !important; padding-right: 0 !important; }
   .section-title { font-size: 1.3rem; }
-  .main-content { padding: 20px 0; }
+  .main-content { padding: 16px 0; }
   .hide-mobile { display: none !important; }
 
   /* Navbar */
-  .navbar-brand-custom .brand-name { font-size: 1.5rem; }
+  .nav-logo { height: 44px !important; }
+  .navbar-brand-custom .brand-name { font-size: 1.4rem; }
   .navbar-brand-custom .brand-motto { font-size: 0.6rem; }
+  .main-navbar .navbar-collapse { width: 100%; }
 
-  /* Hero section */
-  .hero-article { min-height: 260px; border-radius: 8px; }
-  .hero-content { padding: 16px; }
-  .hero-title { font-size: 1.2rem; line-height: 1.3; }
+  /* Topbar */
+  .topbar { font-size: 0.75rem; padding: 6px 0; }
+
+  /* Hero */
+  .hero-article { min-height: 240px; border-radius: 8px; }
+  .hero-content { padding: 14px; }
+  .hero-title { font-size: 1.1rem; line-height: 1.3; }
   .hero-content p { font-size: 0.82rem; }
 
-  /* Article cards */
-  .article-card .card-img-wrapper { height: 180px; }
-  .cp-hero-card-title { font-size: 1.2rem; }
-  .cp-grid { grid-template-columns: 1fr; }
-  .cp-hero-card { flex-direction: column; }
-  .cp-hero-card-img-wrap { height: 220px; }
-
-  /* Category banner */
-  .cp-banner { padding: 32px 0; }
-  .cp-banner-title { font-size: 1.6rem; }
+  /* Category page */
+  .cp-banner { padding: 28px 0; overflow: hidden; }
+  .cp-banner-inner { flex-direction: column; gap: 14px; width: 100%; }
+  .cp-banner-left { flex-direction: column; gap: 10px; width: 100%; }
+  .cp-banner-title { font-size: 1.5rem; }
   .cp-banner-desc { font-size: 0.85rem; }
-  .cp-banner-inner { flex-direction: column; gap: 16px; }
-  .cp-search-form { width: 100%; }
-  .cp-search-inner { flex-wrap: wrap; gap: 8px; }
-  .cp-search-input { width: 100%; }
-
-  /* Filter bar */
+  .cp-search-form { width: 100%; max-width: 100%; }
+  .cp-search-inner { flex-wrap: nowrap; width: 100%; }
+  .cp-search-input { min-width: 0; flex: 1; }
   .cp-filter-inner { flex-direction: column; gap: 8px; align-items: flex-start; }
-  .cp-filter-tabs { flex-wrap: wrap; gap: 6px; }
-
-  /* Sidebar — stack below main on mobile */
-  .cp-sidebar { margin-top: 32px; }
+  .cp-filter-tabs { flex-wrap: wrap; gap: 4px; width: 100%; }
+  .cp-grid { grid-template-columns: 1fr; gap: 16px; }
+  .cp-hero-card { display: flex; flex-direction: column; }
+  .cp-hero-card-img-wrap { height: 200px; width: 100%; }
+  .cp-hero-card-body { padding: 16px; }
+  .cp-sidebar { margin-top: 24px; }
   .cp-newsletter-widget { padding: 20px; }
 
   /* About page */
-  .about-hero { padding: 40px 0 24px; }
-  .about-hero-title { font-size: 1.8rem; }
+  .about-hero { padding: 36px 0 20px; overflow: hidden; }
+  .about-hero-title { font-size: 1.7rem; }
   .about-hero-lead { font-size: 0.9rem; }
-  .about-hero-ctas { flex-direction: column; gap: 10px; }
-  .about-btn-primary,
-  .about-btn-secondary { width: 100%; text-align: center; padding: 12px; }
-  .about-stats-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
-  .about-mission { flex-direction: column; gap: 24px; }
-  .about-values-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .about-hero-ctas { flex-direction: column; gap: 10px; width: 100%; }
+  .about-btn-primary, .about-btn-secondary { width: 100%; text-align: center; padding: 12px; }
+  .about-stats-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .about-stats-bar { overflow: hidden; }
+  .about-mission { flex-direction: column; gap: 20px; }
+  .about-mission-visual { width: 100%; }
+  .about-values-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
   .about-team-grid { grid-template-columns: 1fr; gap: 16px; }
-  .about-team-card { flex-direction: row; gap: 16px; align-items: flex-start; }
-  .about-cta-band { padding: 40px 20px; }
+  .about-team-card { flex-direction: row; gap: 14px; }
+  .about-cta-band { padding: 36px 16px; }
   .about-cta-title { font-size: 1.4rem; }
   .about-cta-form { flex-direction: column; gap: 10px; }
-  .about-cta-input { width: 100%; }
-  .about-cta-btn { width: 100%; }
+  .about-cta-input, .about-cta-btn { width: 100%; }
 
   /* Contact page */
-  .contact-banner { padding: 40px 0 24px; }
-  .cp-banner-title { font-size: 1.6rem; }
+  .contact-banner { padding: 36px 0 20px; overflow: hidden; }
   .contact-form-card { padding: 20px; }
+  .contact-body .row { flex-direction: column; }
   .contact-info { margin-top: 24px; }
-  .contact-social-links { gap: 10px; }
   .contact-submit-btn { width: 100%; justify-content: center; }
+  .contact-social-links { gap: 10px; }
+  .contact-tip-box { padding: 16px; }
 
   /* Article page */
-  .article-hero { min-height: 280px; }
-  .article-hero h1 { font-size: 1.4rem; }
-  .article-body { font-size: 1rem; }
+  .article-hero { min-height: 260px; overflow: hidden; }
+  .article-hero h1 { font-size: 1.3rem; }
+  .article-body { font-size: 0.95rem; }
+
+  /* Opportunities page */
+  .opp-banner { padding: 28px 0; overflow: hidden; }
+  .opp-banner-content { flex-direction: column; gap: 12px; }
+  .opp-grid { grid-template-columns: 1fr; gap: 16px; }
+  .opp-featured { min-height: 240px; }
+  .opp-featured-title { font-size: 1.2rem; }
+  .opp-search-form { flex-wrap: wrap; gap: 8px; width: 100%; }
+  .opp-search-input { width: 100%; }
+  .opp-filter-pills { flex-wrap: wrap; gap: 6px; }
+
+  /* Videos page */
+  .vid-banner { overflow: hidden; }
+  .vid-banner-inner { flex-direction: column; gap: 14px; }
+  .vid-grid { grid-template-columns: 1fr; gap: 16px; }
+  .vid-hero-card { flex-direction: column; }
 
   /* Admin */
   .adm-shell { flex-direction: column; }
-  .adm-sidebar { position: fixed; left: -280px; width: 260px; height: 100vh; z-index: 1100; transition: left 0.3s ease; }
+  .adm-sidebar { position: fixed; left: -280px; width: 260px; height: 100vh; z-index: 1100; transition: left 0.3s ease; overflow-y: auto; }
   .adm-sidebar.open { left: 0; }
-  .adm-main { width: 100%; }
+  .adm-main { width: 100%; min-width: 0; }
+  .adm-content { padding: 16px; }
   .adm-stats-grid { grid-template-columns: repeat(2, 1fr); }
-  .adm-table-wrap { overflow-x: auto; }
-  .adm-table { min-width: 700px; }
+  .adm-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .adm-table { min-width: 600px; }
+  .adm-toolbar { flex-wrap: wrap; gap: 8px; }
   .ae-tabs { flex-wrap: wrap; }
-  .ae-tab { font-size: 0.8rem; padding: 8px 12px; }
-  .am-cat-tabs { overflow-x: auto; flex-wrap: nowrap; -webkit-overflow-scrolling: touch; }
+  .am-cat-tabs { overflow-x: auto; flex-wrap: nowrap; -webkit-overflow-scrolling: touch; padding-bottom: 4px; }
   .am-cat-tab { white-space: nowrap; }
 
   /* Footer */
-  .main-footer { padding: 40px 0 0; }
-  .footer-brand .brand-name { font-size: 1.8rem; }
-  .footer-bottom { padding: 16px 0; font-size: 0.8rem; text-align: center; }
+  .main-footer { padding: 36px 0 0; overflow: hidden; }
+  .footer-logo { height: 55px !important; }
+  .footer-brand .brand-name { font-size: 1.6rem; }
+  .footer-bottom { padding: 14px 0; font-size: 0.8rem; text-align: center; }
   .footer-bottom .container { justify-content: center; flex-direction: column; gap: 4px; }
-
-  /* Opportunities page */
-  .opp-banner { padding: 32px 0; }
-  .opp-banner-content { flex-direction: column; gap: 12px; }
-  .opp-grid { grid-template-columns: 1fr; }
-  .opp-featured { min-height: 260px; }
-  .opp-featured-title { font-size: 1.2rem; }
-  .opp-search-form { flex-wrap: wrap; gap: 8px; }
-  .opp-search-input { width: 100%; }
-  .opp-filter-pills { flex-wrap: wrap; gap: 6px; }
 }
 
-/* ── Small phones ── */
+/* ── Small phones (iPhone SE, older Androids) ── */
 @media (max-width: 576px) {
+  html, body { overflow-x: hidden !important; }
+  .container { padding: 0 12px !important; }
+  .row { margin: 0 !important; }
+  .row > * { padding: 0 !important; }
   .section-title { font-size: 1.1rem; }
 
   /* Navbar */
-  .navbar-brand-custom .brand-name { font-size: 1.3rem; }
+  .nav-logo { height: 38px !important; }
+  .navbar-brand-custom .brand-name { font-size: 1.2rem; }
 
   /* Hero */
-  .hero-title { font-size: 1.05rem; }
-  .hero-article { min-height: 220px; border-radius: 6px; }
+  .hero-title { font-size: 1rem; }
+  .hero-article { min-height: 200px; }
 
   /* Cards */
-  .cp-grid { grid-template-columns: 1fr; gap: 16px; }
+  .cp-grid { grid-template-columns: 1fr; gap: 14px; }
   .article-card .card-img-wrapper { height: 160px; }
+  .cp-hero-card-img-wrap { height: 180px; }
 
   /* About */
-  .about-stats-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-  .about-stat-value { font-size: 1.6rem; }
+  .about-stats-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .about-stat-value { font-size: 1.5rem; }
   .about-values-grid { grid-template-columns: 1fr; }
   .about-team-card { flex-direction: column; align-items: center; text-align: center; }
   .about-team-links { justify-content: center; }
-  .about-section-title { font-size: 1.3rem; }
-  .about-mission-card { padding: 20px; }
-  .about-mission-quote { font-size: 1rem; }
+  .about-section-title { font-size: 1.2rem; }
+  .about-mission-card { padding: 16px; }
+  .about-mission-quote { font-size: 0.95rem; }
 
   /* Contact */
-  .contact-info-card { padding: 16px; }
-  .contact-form-card { padding: 16px; }
-  .contact-tip-box { padding: 16px; }
+  .contact-info-card { padding: 14px; }
+  .contact-form-card { padding: 14px; }
   .contact-social-links { justify-content: center; }
-
-  /* Article page */
-  .article-hero h1 { font-size: 1.2rem; }
 
   /* Admin */
   .adm-stats-grid { grid-template-columns: 1fr; }
   .adm-qa-grid { grid-template-columns: repeat(2, 1fr); }
   .ae-header-actions { flex-wrap: wrap; gap: 6px; }
-  .ae-header-actions .adm-btn { font-size: 0.78rem; padding: 6px 10px; }
-  .adm-toolbar { flex-wrap: wrap; gap: 8px; }
+  .adm-toolbar { flex-wrap: wrap; gap: 6px; }
   .adm-search-wrap { width: 100%; }
   .adm-search { width: 100%; }
+  .am-bulk-bar { flex-wrap: wrap; gap: 6px; }
 
   /* Footer */
-  .footer-social a { width: 34px; height: 34px; font-size: 0.85rem; }
-  .col-6.footer-col { width: 50%; }
-
-  /* Videos page */
-  .videos-grid { grid-template-columns: 1fr; }
+  .footer-logo { height: 48px !important; }
+  .footer-social a { width: 32px; height: 32px; font-size: 0.8rem; }
 }
 
 /* ── Very small phones (320px) ── */
 @media (max-width: 380px) {
-  .container { padding: 0 12px; }
-  .navbar-brand-custom .brand-name { font-size: 1.2rem; }
+  .container { padding: 0 10px !important; }
+  .nav-logo { height: 34px !important; }
+  .cp-banner-title { font-size: 1.2rem; }
+  .hero-title { font-size: 0.95rem; }
   .about-stats-grid { grid-template-columns: 1fr 1fr; }
-  .cp-banner-title { font-size: 1.3rem; }
-  .hero-title { font-size: 1rem; }
   .adm-qa-grid { grid-template-columns: 1fr; }
+  .footer-logo { height: 42px !important; }
+}
+
+/* ── iPhone 15 / large modern phones (390px-430px) specific ── */
+@media (min-width: 380px) and (max-width: 430px) {
+  .container { padding: 0 14px !important; }
+  .nav-logo { height: 40px !important; }
+  .cp-banner-title { font-size: 1.4rem; }
+  .cp-grid { grid-template-columns: 1fr; }
+  .about-values-grid { grid-template-columns: 1fr 1fr; }
 }

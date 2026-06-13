@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { FaSearch, FaUser } from 'react-icons/fa';
 import { NAV_LINKS, SITE_NAME, SITE_MOTTO } from '../../utils/constants';
@@ -12,8 +12,7 @@ const Navbar = () => {
     <nav className="main-navbar navbar navbar-expand-lg">
       <div className="container">
         <Link to="/" className="navbar-brand navbar-brand-custom">
-          <div className="brand-name">Afri<span>LENS</span></div>
-          <div className="brand-motto">{SITE_MOTTO}</div>
+          <img src="/afrilens-logo.png" alt="AfriLENS" className="nav-logo" />
         </Link>
 
         <button
@@ -59,3 +58,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+

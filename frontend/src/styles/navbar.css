@@ -1,4 +1,4 @@
-.topbar {
+﻿.topbar {
   background: var(--topbar-bg);
   color: #adb5bd;
   font-size: 0.8rem;
@@ -112,3 +112,6 @@
   .main-navbar .nav-link { padding: 10px 16px !important; border-bottom: none; border-left: 3px solid transparent; }
   .main-navbar .nav-link:hover, .main-navbar .nav-link.active { border-left-color: #FFD700; border-bottom: none; }
 }
+
+.nav-logo { height: 60px; width: auto; object-fit: contain; }
+.footer-logo { height: 70px; width: auto; object-fit: contain; margin-bottom: 8px; }

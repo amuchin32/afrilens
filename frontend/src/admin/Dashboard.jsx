@@ -41,7 +41,7 @@ export default function Dashboard() {
     <div className="adm-shell">
       <aside className={`adm-sidebar${sidebarOpen ? " open" : ""}`}>
         <div className="adm-logo">
-          Afri<span>LENS</span>
+          <img src="/afrilens-logo.png" alt="AfriLENS" style={{height:"48px",width:"auto",objectFit:"contain"}} />
           <button className="adm-close-btn" onClick={() => setSidebarOpen(false)}><FaTimes /></button>
         </div>
         <nav className="adm-nav">
@@ -123,4 +123,5 @@ function Overview({ onGo, refreshKey }) {
     </div>
   );
 }
+
 
